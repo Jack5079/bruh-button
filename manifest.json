@@ -9,7 +9,7 @@
     "theme_color": "#121317",
     "description": "Bruh!",
     "orientation": "any",
-    "background_color": "transparent",
+    "background_color": "#000000",
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [
