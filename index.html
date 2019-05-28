@@ -12,6 +12,8 @@
   <meta property="og:image" content="https://bruhbutton.tk/icon.png" />
   <meta property="og:description" content="Bruh!" />
   <meta name="theme-color" content="#121317">
+  <link rel="manifest" href="manifest.json">
+  </link>
   <meta charset="utf-8">
   <script>
     if (localStorage.getItem("bruh")) {
@@ -71,10 +73,11 @@
       BRUH
     </button>
   </div>
+  <script src="manup.js"></script>
+  <script>
+    // Load the bruh count
+    document.getElementById("count").innerText = bruh;
+  </script>
 </body>
-<script>
-  // Load the bruh count
-  document.getElementById("count").innerText = bruh;
-</script>
 
 </html>

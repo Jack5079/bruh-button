@@ -1,0 +1,22 @@
+{
+    "dir": "ltr",
+    "lang": "en-US",
+    "name": "Bruh Button",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://bruhbutton.tk/",
+    "short_name": "Bruh Button",
+    "theme_color": "#121317",
+    "description": "Bruh!",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
