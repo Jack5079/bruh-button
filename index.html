@@ -37,20 +37,6 @@
   <link rel="manifest" href="manifest.json">
   </link>
   <meta charset="utf-8">
-  <script>
-    if (localStorage.getItem("bruh")) {
-      bruh = JSON.parse(localStorage.getItem("bruh"));
-    } else {
-      bruh = 0;
-    }
-    function bro() {
-      var a = new Audio("bruh.mp3");
-      a.play();
-      bruh++;
-      localStorage.setItem("bruh", bruh);
-      document.getElementById("count").innerText = bruh;
-    }
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* copy pasted from google fonts lmao */
@@ -64,6 +50,10 @@
     }
 
     button {
+      border: none;
+      outline: none;
+      user-select: none;
+      font-size: 10vw;
       padding: 25px 25px;
       cursor: pointer;
       color: #fff;
@@ -71,13 +61,6 @@
       border-radius: 100px;
       box-shadow: 0 9px #ED2939;
       font-family: 'Spicy Rice', cursive;
-    }
-
-    * {
-      font-size: 10vw;
-      border: none;
-      outline: none;
-      user-select: none;
     }
 
     button:active {
@@ -89,7 +72,7 @@
 </head>
 
 <body style="background: black; color: white;">
-  <div id="count" style="text-align: center; font-family: monospace;">0</div>
+  <div id="count" style="text-align: center; font-family: monospace; font-size: 10vw;">0</div>
   <div style="display:flex;justify-content:center;align-items:center;">
 
     <button onclick="bro();">
@@ -98,6 +81,18 @@
   </div>
   <script src="manup.js"></script>
   <script>
+    if (localStorage.getItem("bruh")) {
+      bruh = JSON.parse(localStorage.getItem("bruh"));
+    } else {
+      bruh = 0;
+    }
+    function bro() {
+      var a = new Audio("bruh.mp3");
+      a.play();
+      bruh++;
+      localStorage.setItem("bruh", bruh);
+      document.getElementById("count").innerText = bruh;
+    }
     // Load the bruh count
     document.getElementById("count").innerText = bruh;
   </script>
