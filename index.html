@@ -81,13 +81,13 @@
   </div>
   <script src="manup.js"></script>
   <script>
+    var a = new Audio("bruh.mp3");
     if (localStorage.getItem("bruh")) {
       bruh = JSON.parse(localStorage.getItem("bruh"));
     } else {
       bruh = 0;
     }
     function bro() {
-      var a = new Audio("bruh.mp3");
       a.play();
       bruh++;
       localStorage.setItem("bruh", bruh);
