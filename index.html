@@ -1,101 +1,98 @@
 ﻿<!DOCTYPE html>
 <html lang="en-US">
 
-<head>
-  <script>
-    // This is the "Offline page" service worker
+  <head>
+    <script>
+      // This is the "Offline page" service worker
 
-    // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+      // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
 
-    // Check compatibility for the browser we're running this in
-    if ("serviceWorker" in navigator) {
-      if (navigator.serviceWorker.controller) {
-        console.log("[PWA Builder] active service worker found, no need to register");
-      } else {
-        // Register the service worker
-        navigator.serviceWorker
-          .register("pwabuilder-sw.js", {
-            scope: "./"
-          })
-          .then(function (reg) {
-            console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-          });
+      // Check compatibility for the browser we're running this in
+      if ('serviceWorker' in navigator) {
+        if (navigator.serviceWorker.controller) {
+          console.log('[PWA Builder] active service worker found, no need to register')
+        } else {
+          // Register the service worker
+          navigator.serviceWorker
+            .register('pwabuilder-sw.js', {
+              scope: './'
+            })
+            .then(function (reg) {
+              console.log('[PWA Builder] Service worker has been registered for scope: ' + reg.scope)
+            })
+        }
       }
-    }
+    </script>
+    <title>Bruh Button</title>
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <meta name="description" content="Bruh!" />
+    <meta property="og:title" content="Bruh Button" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="//bruhbutton.tk" />
+    <meta property="og:site_name" content="Bruh Button" />
+    <meta property="og:image" content="https://bruhbutton.tk/icon.png" />
+    <meta property="og:description" content="Bruh!" />
+    <meta name="theme-color" content="#121317">
+    <link rel="manifest" href="manifest.json">
+    </link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* copy pasted from google fonts lmao */
+      @font-face {
+        font-family: 'Spicy Rice';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Spicy Rice'), local('SpicyRice-Regular'), url(https://fonts.gstatic.com/s/spicyrice/v7/uK_24rSEd-Uqwk4jY1RyKvi8W2gzVcY.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
 
-  </script>
-  <title>Bruh Button</title>
-  <link rel="shortcut icon" type="image/png" href="/icon.png" />
-  <meta name="description" content="Bruh!" />
-  <meta property="og:title" content="Bruh Button" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="//bruhbutton.tk" />
-  <meta property="og:site_name" content="Bruh Button" />
-  <meta property="og:image" content="https://bruhbutton.tk/icon.png" />
-  <meta property="og:description" content="Bruh!" />
-  <meta name="theme-color" content="#121317">
-  <link rel="manifest" href="manifest.json">
-  </link>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    /* copy pasted from google fonts lmao */
-    @font-face {
-      font-family: 'Spicy Rice';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: local('Spicy Rice'), local('SpicyRice-Regular'), url(https://fonts.gstatic.com/s/spicyrice/v7/uK_24rSEd-Uqwk4jY1RyKvi8W2gzVcY.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
+      button {
+        border: none;
+        outline: none;
+        user-select: none;
+        font-size: 10vw;
+        padding: 25px 25px;
+        cursor: pointer;
+        color: #fff;
+        background-color: #FF0000;
+        border-radius: 100px;
+        box-shadow: 0 9px #ED2939;
+        font-family: 'Spicy Rice', cursive;
+      }
 
-    button {
-      border: none;
-      outline: none;
-      user-select: none;
-      font-size: 10vw;
-      padding: 25px 25px;
-      cursor: pointer;
-      color: #fff;
-      background-color: #FF0000;
-      border-radius: 100px;
-      box-shadow: 0 9px #ED2939;
-      font-family: 'Spicy Rice', cursive;
-    }
+      button:active {
+        box-shadow: 0 5px #ED2939;
+        transform: translateY(4px);
+      }
+    </style>
+    <meta name="google-site-verification" content="__wr6ov5TPo2IupX0AUyA-ezYREQ3wKhpTw6y3UZhVY" />
+  </head>
 
-    button:active {
-      box-shadow: 0 5px #ED2939;
-      transform: translateY(4px);
-    }
-  </style>
-  <meta name="google-site-verification" content="__wr6ov5TPo2IupX0AUyA-ezYREQ3wKhpTw6y3UZhVY" />
-</head>
+  <body style="background: black; color: white;">
+    <div id="count" style="text-align: center; font-family: monospace; font-size: 10vw;">0</div>
+    <div style="display:flex;justify-content:center;align-items:center;">
 
-<body style="background: black; color: white;">
-  <div id="count" style="text-align: center; font-family: monospace; font-size: 10vw;">0</div>
-  <div style="display:flex;justify-content:center;align-items:center;">
-
-    <button onclick="bro();">
-      BRUH
-    </button>
-  </div>
-  <script src="manup.js"></script>
-  <script>
-    var a = new Audio("bruh.mp3");
-    if (localStorage.getItem("bruh")) {
-      bruh = JSON.parse(localStorage.getItem("bruh"));
-    } else {
-      bruh = 0;
-    }
-    function bro() {
-      a.play();
-      bruh++;
-      localStorage.setItem("bruh", bruh);
-      document.getElementById("count").innerText = bruh;
-    }
-    // Load the bruh count
-    document.getElementById("count").innerText = bruh;
-  </script>
-</body>
+      <button id="bruh">
+        BRUH
+      </button>
+    </div>
+    <script src="manup.js"></script>
+    <script>
+      /* global localStorage, Audio */
+      var bruh = 0
+      if (localStorage.getItem('bruh')) bruh = JSON.parse(localStorage.getItem('bruh'))
+      document.getElementById('bruh').onclick = () => {
+        var a = new Audio('bruh.mp3')
+        a.play()
+        bruh++
+        localStorage.setItem('bruh', bruh)
+        document.getElementById('count').innerText = bruh
+      }
+      // Load the bruh count
+      document.getElementById('count').innerText = bruh
+    </script>
+  </body>
 
 </html>
