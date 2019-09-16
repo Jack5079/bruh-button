@@ -17,7 +17,7 @@
         cursor: pointer;
         color: #fff;
         background-color: #FF0000;
-        border-radius: 100px;
+        border-radius: 0.7em;
         box-shadow: 0 9px #ED2939;
         font-family: 'Spicy Rice', cursive;
       }
@@ -29,9 +29,10 @@
       body {
           background: black;
           color: white;
+          text-align: center;
       }
       #count {
-          text-align: center; font-family: monospace; font-size: 10vw;
+         font-family: monospace; font-size: 10vw;
       }
       #contain {
           display:flex;
