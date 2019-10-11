@@ -18,13 +18,14 @@
         color: #fff;
         background-color: #FF0000;
         border-radius: 0.7em;
-        box-shadow: 0 9px #ED2939;
+        box-shadow: 0 20px #ED2939;
         font-family: 'Spicy Rice', cursive;
+        transition: box-shadow 1s, transform 1s;
       }
 
       button:active {
-        box-shadow: 0 5px #ED2939;
-        transform: translateY(4px);
+        box-shadow: 0 10px #ED2939;
+        transform: translateY(10px);
       }
       body {
           background: black;
