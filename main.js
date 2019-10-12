@@ -4,7 +4,8 @@ HTMLElement.prototype.click = function ( funct ) {
 }
 var bruh = 0
 if ( localStorage.getItem( 'bruh' ) ) bruh = JSON.parse( localStorage.getItem( 'bruh' ) )
-document.getElementById( 'bruh' ).click( () => {
+document.getElementById( 'bruh' ).click( ( e ) => {
+  console.log( e )
   var a = new Audio( 'bruh.mp3' )
   a.play()
   bruh++
