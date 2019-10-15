@@ -18,7 +18,7 @@ document.getElementById( 'count' ).innerText = bruh
 
 let c = 0
 const o = '38384040373937396665'.match( /.{1,2}/g )
-var activate = () => { }
+
 document.addEventListener( 'keydown', ( e ) => {
   c = ( e.keyCode === o[ c ] ) ? c + 1 : 0
   if ( c === o.length ) document.querySelector( 'iframe' ).remove()
